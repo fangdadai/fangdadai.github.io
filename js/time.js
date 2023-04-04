@@ -20,6 +20,8 @@ window.onload=function(){
             case 6: convert_days = "Saturday"; break;
         }
         var convert_sec;
+        var convert_min;
+        var convert_hr;
         // append "0" infront of the variable 'second' if it is a single digit 
         switch(second) {
             case 0: convert_sec = "00"; break;
@@ -34,7 +36,33 @@ window.onload=function(){
             case 9: convert_sec = "09"; break;
             default: convert_sec = second;
         }
-        time.innerText = "It is now: \n" + month + "/" + day + "/" + year + " " + hour + ":" + minute + ":" + convert_sec + "\n" + convert_days;
+        switch(minute) {
+            case 0: convert_min = "00"; break;
+            case 1: convert_min = "01"; break;
+            case 2: convert_min = "02"; break;
+            case 3: convert_min = "03"; break;
+            case 4: convert_min = "04"; break;
+            case 5: convert_min = "05"; break;
+            case 6: convert_min = "06"; break;
+            case 7: convert_min = "07"; break;
+            case 8: convert_min = "08"; break;
+            case 9: convert_min = "09"; break;
+            default: convert_min = minute;
+        }
+        switch(hour) {
+            case 0: convert_hr = "00"; break;
+            case 1: convert_hr = "01"; break;
+            case 2: convert_hr = "02"; break;
+            case 3: convert_hr = "03"; break;
+            case 4: convert_hr = "04"; break;
+            case 5: convert_hr = "05"; break;
+            case 6: convert_hr = "06"; break;
+            case 7: convert_hr = "07"; break;
+            case 8: convert_hr = "08"; break;
+            case 9: convert_hr = "09"; break;
+            default: convert_hr = hour;
+        }
+        time.innerText = "It is now: \n" + month + "/" + day + "/" + year + " " + convert_hr + ":" + convert_min + ":" + convert_sec + "\n" + convert_days;
     }
     times();
     setInterval(times, 1000);
