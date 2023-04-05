@@ -22,6 +22,8 @@ window.onload=function(){
         var convert_sec;
         var convert_min;
         var convert_hr;
+        var word_mon;
+        var greeting;
         // append "0" infront of the variable 'second' if it is a single digit 
         switch(second) {
             case 0: convert_sec = "00"; break;
@@ -62,7 +64,31 @@ window.onload=function(){
             case 9: convert_hr = "09"; break;
             default: convert_hr = hour;
         }
-        time.innerText = "It is now: \n" + month + "/" + day + "/" + year + " " + convert_hr + ":" + convert_min + ":" + convert_sec + "\n" + convert_days;
+        switch(month) {
+            case 1: word_mon = "January"; break;
+            case 2: word_mon = "February"; break;
+            case 3: word_mon = "March"; break;
+            case 4: word_mon = "April"; break;
+            case 5: word_mon = "May"; break;
+            case 6: word_mon = "June"; break;
+            case 7: word_mon = "July"; break;
+            case 8: word_mon = "August"; break;
+            case 9: word_mon = "September"; break;
+            case 10: word_mon = "October"; break;
+            case 11: word_mon = "November"; break;
+            case 12: word_mon = "December"; break;
+        }
+        if (hour > 4 && hour < 12) {
+            greeting = "Good Morning!";
+        } else if (hour >= 12 && hour < 17) {
+            greeting = "Good Afternoon!";
+        } else if (hour >= 17 && hour < 24) {
+            greeting = "Good Evening!";
+        } else {
+            greeting = "Maybe it's time for bed..."
+        }
+        time.innerText = "It is now: \n" + convert_hr + ":" + convert_min + ":" + convert_sec + "\n" 
+                            + convert_days + ", " + word_mon + " " + day + ", " + year + "\n" + greeting;
     }
     times();
     setInterval(times, 1000);
