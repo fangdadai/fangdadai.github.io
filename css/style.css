@@ -3,23 +3,19 @@
     margin: 0;
     padding: 0;
 }
-
 body {
     font-family: Helvetica;
     line-height: 1.3;
 }
-
 h1 {
     font-size: 40px;
     font-weight: bold;
     margin-bottom: 10px;
     color: white;
 }
-
 h2 {
     color: #fff;
 }
-
 .main {
     height: 100vh;
     display: flex;
@@ -29,7 +25,6 @@ h2 {
     text-align: center;
     overflow: hidden;
 }
-
 .img-container {
     position: absolute;
     top: 0;
@@ -38,52 +33,94 @@ h2 {
     height: 100%;
     z-index: -1;
 }
-
 .img-container img{
     min-width: 100%;
     min-height: 100%;
     opacity: 0.8;
 }
-
 .welcome {
-    position: absolute;
+    position: relative;
     width: 300px;
     height: 200px;
     background-color: rgb(52, 50, 50);
     opacity: 0.8;
-    margin-left: 800px;
-    margin-bottom: 300px;
     border-radius: 15px;
-    float:left;
     transition: 0.5s;
+    float: left;
 }
-
 .welcome:hover{
     transform: scale(1.05);
 }
 
 .contact {
-    position: absolute;
-    margin-left: 800px;
-    margin-bottom: 30px;
+    position: relative;
     width: 300px;
     height: 50px;
     display: flex;
     justify-content: space-around;
     line-height: 70px;
-    overflow: hidden;
 }
 
 .contact a img{
     width: 30px;
     height: 30px;
     transition: 0.3s;
-    opacity: 0.7;
 }
-
 .contact a img:hover{
     background:gold;
     border-radius: 110%;
     transform: scale(1.3);
     opacity: 1;
+}
+.content {
+    display: grid;
+    padding: 30px;
+    margin-left: 10%;
+    margin-bottom: 10%;
+}
+.tool, .cv, .music, .other {
+    width: 200px;
+    height: 200px;
+    background-color: rgb(52, 50, 50);
+    opacity: 0.8;
+    border-radius: 15px;
+    margin: 10px;
+    float: left; 
+    line-height: 200px;
+    color: white;
+    font-size: 20pt;
+    transition: 0.4s;
+}
+.tool:hover{
+    transform: scale(1.05);
+    opacity: 0.9;
+    cursor: pointer;
+    color: gold;
+}
+.cv:hover{
+    transform: scale(1.05);
+    opacity: 0.9;
+    cursor: pointer;
+    color: gold;
+}
+.music:hover{
+    transform: scale(1.05);
+    opacity: 0.9;
+    cursor: pointer;
+    color: gold;
+}
+.other:hover{
+    transform: scale(1.05);
+    opacity: 0.9;
+    cursor: pointer;
+    color: gold;
+}
+.nav {
+    width: 520px;
+    height: 400px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-basis: 50%;
+    margin-left: 30%;
+    margin-bottom: 1.75%;
 }
